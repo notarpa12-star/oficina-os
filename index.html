@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101214">
+  <title>Oficina OS · Central de manutenção</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#painel" aria-label="Oficina OS, início"><span class="brand-mark" data-icon="wrench"></span><span>oficina<span class="brand-os">OS</span><small>GESTÃO DE MANUTENÇÃO</small></span></a>
+    <nav aria-label="Navegação principal">
+      <span class="nav-label">OPERAÇÃO</span>
+      <a href="#painel" data-page="painel"><span data-icon="dashboard"></span> Visão geral</a>
+      <a href="#ordens" data-page="ordens"><span data-icon="clipboard"></span> Ordens de serviço</a>
+      <a href="#quadro" data-page="quadro"><span data-icon="columns"></span> Quadro de trabalho</a>
+      <a href="#mapa" data-page="mapa"><span data-icon="cube"></span> Mapa 3D</a>
+    </nav>
+    <div class="sidebar-foot"><span class="demo-dot"></span><div>Ambiente de demonstração<small>Dados salvos neste navegador</small></div></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <button class="icon-button mobile-menu" type="button" data-action="menu" aria-label="Abrir menu" aria-expanded="false"><span data-icon="menu"></span></button>
+      <div class="breadcrumb">Operação <span>/</span> <strong id="breadcrumb">Visão geral</strong></div>
+      <div class="top-right">
+        <button class="icon-button search-button" data-action="search" aria-label="Buscar ordens"><span data-icon="search"></span></button>
+        <div class="avatar" aria-label="Ambiente de demonstração">OS</div>
+      </div>
+    </header>
+    <main id="main">
+      <div class="page-head">
+        <div><div class="eyebrow"><span class="demo-dot"></span> CENTRAL DE OPERAÇÕES</div><h1 id="page-title">Visão geral</h1><p id="page-description">Acompanhe as ordens de serviço e a situação de cada área.</p></div>
+        <button class="primary" data-action="new"><span data-icon="plus"></span> Nova ordem</button>
+      </div>
+      <div id="view"></div>
+    </main>
+  </div>
+  <dialog id="order-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <div id="toast" role="status" class="toast" hidden></div>
+</body>
+</html>
